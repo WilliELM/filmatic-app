@@ -2,7 +2,7 @@ package com.example.filmatic_app;
 
 public class MovieFetcher {
 
-private int rating;
+    private int rating;
     private int runtime;
     private String title;
     private String description;
@@ -75,4 +75,6 @@ private int rating;
     public void setServices(String services) {
         this.services = services;
     }
+
+
 }
