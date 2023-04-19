@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
     private List<MovieFetcher> itemList;
 
+    // setFilteredList skal kaldes med liste over film (moviefetchers)
 
     public void setFilteredList (List<MovieFetcher> filteredList){
         this.itemList = filteredList;
