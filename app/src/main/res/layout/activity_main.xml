@@ -17,26 +17,30 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/SearchBar1"
         android:layout_width="322dp"
         android:layout_height="52dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/search_view_bg"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search here..." />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="124dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="212dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
         android:scaleType="centerInside"
         android:scaleX="4"
         android:scaleY="4"
         android:src="@drawable/filmatic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
