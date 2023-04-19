@@ -41,13 +41,16 @@ public class MainActivity extends AppCompatActivity {
         });
         itemList = new ArrayList<>();
     }
+
     private void filterList(String text) {
         List<MovieFetcher> filteredList = new ArrayList<>();
+        //foreach der sorterer liste efter brugerens søgning
         for (MovieFetcher movie : itemList){
             if (movie.getTitle().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(movie);
             }
         }
+        //toast hvis der ikke findes noget data fra søgningen
         if (filteredList.isEmpty()){
             Toast.makeText(this,"No data found", Toast.LENGTH_SHORT).show();
         } else {
