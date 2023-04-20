@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +16,9 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +29,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
     private List<MovieFetcher> itemList;
+    private List<String> movieTitleList;
 
     //Maheen
     public void navigateToSearch(View view) {
@@ -42,14 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
     // setFilteredList skal kaldes med liste over film (moviefetchers)
     //William
-    public void setFilteredList (List<MovieFetcher> filteredList){
-        this.itemList = filteredList;
+    public void setFilteredList (List<String> filteredList){
+        this.movieTitleList = filteredList;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fetchMovie();
 
+
+
+        System.out.println(itemList);
         //William
         searchView = findViewById(R.id.SearchBar1);
         searchView.clearFocus();
@@ -65,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         itemList = new ArrayList<>();
+        movieTitleList = new ArrayList<>();
     }
     //William
     private void filterList(String text) {
@@ -88,14 +97,34 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
                     // Handle the API response here
-                    String body = response.toString();
-                    Log.d("API Response", body);
-                    System.out.println(body);
-                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                    MovieFetcher m = gson.fromJson(body, MovieFetcher.class);
-                    Log.d("API Response title", "" + m);
-                    String jsonString = gson.toJson(m.getRating());
-                    Log.d("JSON string", jsonString);
+                    System.out.println(response.length());
+                    //William
+                    try {
+                        for (int i = 0; i < response.getJSONArray("result").length()-1; i++) {
+                            String titleOfMovie = response.getJSONArray("result").getJSONObject(i).getString("title");
+                            String description = response.getJSONArray("result").getJSONObject(i).getString("overview");
+                            JSONArray cast = response.getJSONArray("result").getJSONObject(i).getJSONArray("cast");
+                            int rating = response.getJSONArray("result").getJSONObject(i).getInt("imdbRating");
+                            int runtime = 0;
+                            //int runtime = response.getJSONArray("result").getJSONObject(i).getInt("runtime");
+                            JSONArray servicesToStream = null;
+                            String posterPath = "https://image.tmdb.org/t/p/w300" + response.getJSONArray("result").getJSONObject(i).getString("posterPath");
+                            ArrayList<String> movieList = new ArrayList<>();
+
+                            MovieFetcher n = new MovieFetcher(rating,runtime,titleOfMovie,description,cast,posterPath,servicesToStream);
+                            itemList.add(n);
+                            movieTitleList.add(n.getTitle());
+                            System.out.println(itemList.toString());
+                            setFilteredList(movieTitleList);
+                            ListView myListView = findViewById(R.id.listeTilFilm);
+                            ArrayAdapter<String> myAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
+                            myListView.setAdapter(myAdapter);
+
+
+                        }// nicklas
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
                 },
                 error -> {
                     // Handle errors here
@@ -105,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> headers = new HashMap<>();
-                headers.put("X-RapidAPI-Key", "b82e68eadamsh9fd7ac7d38b05bep1a4494jsn8add60e648a7");
+                headers.put("X-RapidAPI-Key", "16e69359b6msh3a22f265460a552p16fc9djsn03f7d838b998");
                 headers.put("X-RapidAPI-Host", "streaming-availability.p.rapidapi.com");
                 return headers;
             }

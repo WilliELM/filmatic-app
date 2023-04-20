@@ -1,16 +1,22 @@
 package com.example.filmatic_app;
 
+import com.google.gson.JsonArray;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+
 public class MovieFetcher {
 
     private int rating;
     private int runtime;
     private String title;
     private String description;
-    private String cast;
+    private JSONArray cast;
     private String picture;
-    private String services;
+    private JSONArray services;
 
-    public MovieFetcher(int rating, int runtime, String title, String description, String cast, String picture, String services) {
+    public MovieFetcher(int rating, int runtime, String title, String description, JSONArray cast, String picture, JSONArray services) {
         this.rating = rating;
         this.runtime = runtime;
         this.title = title;
@@ -52,11 +58,11 @@ public class MovieFetcher {
         this.description = description;
     }
 
-    public String getCast() {
+    public JSONArray getCast() {
         return cast;
     }
 
-    public void setCast(String cast) {
+    public void setCast(JSONArray cast) {
         this.cast = cast;
     }
 
@@ -68,11 +74,11 @@ public class MovieFetcher {
         this.picture = picture;
     }
 
-    public String getServices() {
+    public JSONArray getServices() {
         return services;
     }
 
-    public void setServices(String services) {
+    public void setServices(JSONArray services) {
         this.services = services;
     }
 
