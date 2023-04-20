@@ -125,3 +125,6 @@ Motivation (så jeg kan): spare tid på at lede efter en ønsket film/serie og i
 ## Style tile
 ![2](https://user-images.githubusercontent.com/111922379/232430186-691ded6d-be10-4074-af62-6a0a89cb7135.png)
 
+## Mockup
+<img width="909" alt="Mockup of app" src="https://user-images.githubusercontent.com/111952804/233292481-e9bcf9b4-eba5-4668-b50b-c968477e7976.png">
+
