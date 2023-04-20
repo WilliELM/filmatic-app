@@ -16,13 +16,24 @@ Vi har lavet survey, for at få kvantitative data. Vi har udsendt vores survey t
 
 [Survey link](https://docs.google.com/forms/d/e/1FAIpQLSdpELD3fK4HUdkwh2NGcGHrtefLNEhr7sWw61sf08L07Oy16g/viewform?usp=sf_link)
   
-  ```mermaid
+  <img width="712" src="https://user-images.githubusercontent.com/111952804/233325828-13bc1a2a-c984-46f2-bd9f-a1bc41f13537.png">
+   
+   - En bred aldersgruppe fra 17- til 47-årige.
   
+  - Mange har mere end 1 streamingtjeneste.
+  
+  <img width="712" src="https://user-images.githubusercontent.com/111952804/233326636-06ebc903-033c-4a9c-bd62-7b96aeac4aa0.png">
+    
+  - Flertallet benytter streamingtjenester flere gange dagligt.
+
+  
+  ```mermaid
   pie title Hvordan finder du ud af, hvor du kan streame en bestemt film eller serie?
     "Googler det" : 22
     "Kigger på min streamingtjeneste" : 4
     "Playpilot" : 4
   ```
+  - Langt de fleste af brugerne søger på nettet, googling.
 
   ```mermaid
   pie title Hvad gør du, hvis du ikke kan finde den ønskede film eller serie?
@@ -32,7 +43,17 @@ Vi har lavet survey, for at få kvantitative data. Vi har udsendt vores survey t
   
   ```
   
+  - Halvdelen af brugerne oplever ikke udfordringer med søgning, men den anden halvdel mener at det kan være svært med forskellige titler på forskellige sprog, det tager længere tid at finde film/serie og at der kan kræves betaling.
   
+  - Flertallet af brugerne, ærgrer sig, bliver skuffet eller irriteret, hvis de ikke kan finde den ønsket film/serie, mens for de resterende, er det ikke et stort problem.
+  
+  <img width="600" src="https://user-images.githubusercontent.com/111952804/233329136-5f4c9a50-f050-445d-b0c3-937ff6ee4fcb.png">
+- Brugerne gør forskellige ting, når de ikke kan finde ønsket film/serie, som at finde en anden, leje, finde den bestemte online eller opgiver helt.
+  
+ -Brugerne mener at forbedring kunne være:
+1. overblik over hvor film/serie er tilgængelig.
+2. god søgeplatform.
+3. Alt indhold samlet ét sted.  
 </details>
 
 
