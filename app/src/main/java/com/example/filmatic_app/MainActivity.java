@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -14,8 +17,21 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
     private List<MovieFetcher> itemList;
 
-    // setFilteredList skal kaldes med liste over film (moviefetchers)
+    //Maheen
+    public void navigateToSearch(View view) {
+        ImageButton newNavigation = findViewById(R.id.imageButtonSearch);
+        Intent newIntentSearch = new Intent(this, ListActivity.class);
+        startActivity(newIntentSearch);
+    }
+    //Maheen
+    public void navigateToExplore(View view) {
+        ImageButton newNavigation = findViewById(R.id.imageButtonExplore);
+        Intent newIntentExplore = new Intent(this, ExploreActivity.class);
+        startActivity(newIntentExplore);
+    }
 
+    // setFilteredList skal kaldes med liste over film (moviefetchers)
+    //William
     public void setFilteredList (List<MovieFetcher> filteredList){
         this.itemList = filteredList;
     }
@@ -23,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //William
         searchView = findViewById(R.id.SearchBar1);
         searchView.clearFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -30,18 +48,15 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 filterList(newText);
                 return true;
             }
-
-
         });
         itemList = new ArrayList<>();
     }
-
+    //William
     private void filterList(String text) {
         List<MovieFetcher> filteredList = new ArrayList<>();
         //foreach der sorterer liste efter brugerens søgning
