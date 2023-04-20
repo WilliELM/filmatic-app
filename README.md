@@ -140,7 +140,8 @@ Motivation (så jeg kan): spare tid på at lede efter en ønsket film/serie og i
 <img width="712" alt="Skærmbillede 2023-04-17 kl  10 44 21" src="https://user-images.githubusercontent.com/111922379/232432813-f5792541-ff5c-4f0d-ad23-24856132f178.png">
 
 ## Beskrivelse af løsningen og processen
-Vi startede med at lave et moodboard som indeholder elementer som relaterer til vores emne. Så lavede vi et solution skecth med hvilken indhold og bruger interaktivitet, vi ville have med i vores app, og byggede videre op i wireframe, som viser mere præcis placering af elementer og funktioner. Så arbejdede vi med styletile og mockup, som leder til vores endelige appløsning. 
+Vi startede med at lave et moodboard som indeholder elementer som relaterer til vores emne. Så lavede vi et solution skecth med hvilken indhold og bruger interaktivitet, vi ville have med i vores app, og byggede videre op i wireframe, som viser mere præcis placering af elementer og funktioner. Så arbejdede vi med styletile og mockup, som leder til vores endelige appløsning.
+Vi ville gerne hjælpe vores brugere med at finde ud hvor en film kan streames, derfor har vi taget udgangspunkt i vores brugeres behov, som god søgeplatform og overblik over tilgængelighed.
 
 ## Mood board
 ![1](https://user-images.githubusercontent.com/111922379/232430220-33859a11-115b-4d4e-9241-d07b29ed4fc1.png)
