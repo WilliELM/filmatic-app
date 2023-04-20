@@ -15,81 +15,130 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:background="@drawable/search_view_bg"/>
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/SearchBar1"
         android:layout_width="322dp"
         android:layout_height="52dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/search_view_bg"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search here..." />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="124dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="212dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
         android:scaleType="centerInside"
         android:scaleX="4"
         android:scaleY="4"
         android:src="@drawable/filmatic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
+
         android:id="@+id/imageButtonHome"
+
         android:layout_width="86dp"
+
         android:layout_height="63dp"
+
         android:layout_marginStart="32dp"
+
         android:layout_marginTop="32dp"
+
         android:layout_marginBottom="24dp"
+
         android:background="#FFFFFF"
+
         android:scaleType="centerInside"
+
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toStartOf="@id/imageButtonSearch"
+
         app:layout_constraintHorizontal_bias="0.075"
+
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+
         app:layout_constraintVertical_bias="1.0"
+
         app:srcCompat="@drawable/house" />
 
     <ImageButton
+
         android:id="@+id/imageButtonSearch"
+
         android:onClick="navigateToSearch"
+
         android:layout_width="67dp"
+
         android:layout_height="58dp"
+
         android:layout_marginTop="32dp"
+
         android:layout_marginBottom="24dp"
+
         android:background="#FFFFFF"
+
         android:scaleType="centerInside"
+
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.501"
+
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+
         app:layout_constraintVertical_bias="0.981"
+
         app:srcCompat="@drawable/search" />
 
     <ImageButton
-        android:id="@+id/imageButtonExplore"
-        android:onClick="navigateToExplore"
-        android:layout_width="74dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:background="#FFFFFF"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonSearch"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.992"
-        app:srcCompat="@drawable/explore" />
 
+        android:id="@+id/imageButtonExplore"
+
+        android:onClick="navigateToExplore"
+
+        android:layout_width="74dp"
+
+        android:layout_height="64dp"
+
+        android:layout_marginTop="32dp"
+
+        android:layout_marginEnd="32dp"
+
+        android:layout_marginBottom="24dp"
+
+        android:background="#FFFFFF"
+
+        android:scaleType="centerInside"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.912"
+
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSearch"
+
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+
+        app:layout_constraintVertical_bias="0.992"
+
+        app:srcCompat="@drawable/explore" />
 </androidx.constraintlayout.widget.ConstraintLayout>
