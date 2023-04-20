@@ -1,17 +1,27 @@
 package com.example.filmatic_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
@@ -72,4 +82,37 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    //Nicklas
+    private void fetchMovie() {
+        String url = "https://streaming-availability.p.rapidapi.com/v2/search/title?title=batman&country=dk&show_type=all&output_language=en";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    // Handle the API response here
+                    String body = response.toString();
+                    Log.d("API Response", body);
+                    System.out.println(body);
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    MovieFetcher m = gson.fromJson(body, MovieFetcher.class);
+                    Log.d("API Response title", "" + m);
+                    String jsonString = gson.toJson(m.getRating());
+                    Log.d("JSON string", jsonString);
+                },
+                error -> {
+                    // Handle errors here
+                    Log.e("API Error", error.toString());
+                }
+        ) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("X-RapidAPI-Key", "b82e68eadamsh9fd7ac7d38b05bep1a4494jsn8add60e648a7");
+                headers.put("X-RapidAPI-Host", "streaming-availability.p.rapidapi.com");
+                return headers;
+            }
+        };
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
+    }
+
+
 }
