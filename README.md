@@ -62,7 +62,10 @@ Brugeren ender med at finde en anden gratis tilgængelig film på streamingtjene
 
 <details open>
   <summary> <b>Konklusion</b> </summary>
-
+Et flertal af vores brugere benytter streamingtjenester flere gange dagligt.
+Mange får negative følelser, når de ikke kan finde ud hvor en bestemt film/serie kan streames. 
+Brugerne gør flere forskellige ting, hvis de ikke kan finde en film eller serie, som at finde en anden film/serie, lejer, finder den bestemte online eller opgiver helt.
+Brugerne har behov for overblik over hvor film/serie er tilgængelig, god søgeplatform og alt indhold samlet ét sted.
 </details>
 
 ## User personas
