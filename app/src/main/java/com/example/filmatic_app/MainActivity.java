@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //William
         searchView = findViewById(R.id.SearchBar1);
         searchView.clearFocus();
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -119,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
                             ListView myListView = findViewById(R.id.listeTilFilm);
                             ArrayAdapter<String> myAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
                             myListView.setAdapter(myAdapter);
+
+                            // myListView.setVisibility(View.GONE);
 
 
                         }// nicklas
