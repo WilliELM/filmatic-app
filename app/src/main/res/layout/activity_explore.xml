@@ -57,14 +57,16 @@
 
   <ListView
       android:id="@+id/listeTilFilm"
-      android:layout_width="415dp"
-      android:layout_height="601dp"
+      android:layout_width="427dp"
+      android:layout_height="505dp"
       android:layout_marginTop="67dp"
       android:layout_marginBottom="88dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+      app:layout_constraintTop_toBottomOf="@+id/imageView4"
+      app:layout_constraintVertical_bias="0.0"
+      tools:listitem="@layout/list_item" />
 
   <ImageView
       android:id="@+id/imageView4"

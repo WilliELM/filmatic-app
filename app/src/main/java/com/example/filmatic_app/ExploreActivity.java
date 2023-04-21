@@ -1,9 +1,11 @@
 package com.example.filmatic_app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -15,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.filmatic_app.databinding.ActivityMainBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,8 +30,9 @@ import java.util.Map;
 public class ExploreActivity extends AppCompatActivity {
 
     private SearchView searchView;
-    private List<MovieFetcher> itemList;
-    private List<String> movieTitleList;
+    private ArrayList<MovieFetcher> itemList;
+    private ArrayList<String> movieTitleList;
+    ActivityMainBinding binding;
 
     //Maheen
     public void navigateToHome(View view) {
@@ -48,6 +52,10 @@ public class ExploreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explore);
 
+
+
+
+
         fetchMovie();
 
         System.out.println(itemList);
@@ -60,7 +68,7 @@ public class ExploreActivity extends AppCompatActivity {
 
     // setFilteredList skal kaldes med liste over film (moviefetchers)
     //William
-    public void setFilteredList (List<String> filteredList){
+    public void setFilteredList (ArrayList<String> filteredList){
         this.movieTitleList = filteredList;
     }
 
@@ -74,6 +82,7 @@ public class ExploreActivity extends AppCompatActivity {
                     try {
                         for (int i = 0; i < response.getJSONArray("result").length()-1; i++) {
                             String titleOfMovie = response.getJSONArray("result").getJSONObject(i).getString("title");
+                            System.out.println(titleOfMovie);
                             String description = response.getJSONArray("result").getJSONObject(i).getString("overview");
                             JSONArray cast = response.getJSONArray("result").getJSONObject(i).getJSONArray("cast");
                             int rating = response.getJSONArray("result").getJSONObject(i).getInt("imdbRating");
@@ -86,19 +95,45 @@ public class ExploreActivity extends AppCompatActivity {
                             MovieFetcher n = new MovieFetcher(rating,runtime,titleOfMovie,description,cast,posterPath,servicesToStream);
                             itemList.add(n);
                             movieTitleList.add(n.getTitle());
-                            System.out.println(itemList.toString());
                             setFilteredList(movieTitleList);
-                            ListView myListView = findViewById(R.id.listeTilFilm);
-                            ArrayAdapter<String> myAdapter = new ArrayAdapter<>(ExploreActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
-                            myListView.setAdapter(myAdapter);
+                           // ListView myListView = findViewById(R.id.listeTilFilm);
+                            //ArrayAdapter<String> myAdapter = new ArrayAdapter<>(ExploreActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
+                           // myListView.setAdapter(myAdapter);
 
                             // myListView.setVisibility(View.GONE);
+
+
+
+
+
+
+
 
 
                         }// nicklas
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
+                    binding = ActivityMainBinding.inflate(getLayoutInflater());
+                    setContentView(binding.getRoot());
+                    MovieAdapter movieAdapter = new MovieAdapter(ExploreActivity.this,R.layout.list_item,R.id.titleOfMovie,itemList);
+
+                    //public MovieAdapter (Context context, ArrayList<MovieFetcher> movieFetcherArrayList){
+                    //    super(context,R.layout.list_item,movieFetcherArrayList);
+                  //  }
+
+
+
+                    binding.listeTilFilm.setAdapter(movieAdapter);
+                    binding.listeTilFilm.setClickable(true);
+                  // binding.listeTilFilm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                       // @Override
+                        //public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            // intent til ny activity skal indsættes her!!!!
+                            //  intent.putExtra("title", osv)
+                       // }
+                  //  });
+
                 },
                 error -> {
                     // Handle errors here
