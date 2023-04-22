@@ -54,4 +54,31 @@
       app:layout_constraintStart_toEndOf="@+id/imageButtonSearch"
       app:layout_constraintVertical_bias="0.992"
       app:srcCompat="@drawable/explore" />
-  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <ListView
+      android:id="@+id/listeTilFilm"
+      android:layout_width="415dp"
+      android:layout_height="601dp"
+      android:layout_marginTop="67dp"
+      android:layout_marginBottom="88dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+  <ImageView
+      android:id="@+id/imageView4"
+      android:layout_width="212dp"
+      android:layout_height="42dp"
+      android:layout_marginTop="16dp"
+      android:scaleType="centerInside"
+      android:scaleX="4"
+      android:scaleY="4"
+      android:src="@drawable/filmatic"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

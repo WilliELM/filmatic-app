@@ -16,13 +16,24 @@ Vi har lavet survey, for at få kvantitative data. Vi har udsendt vores survey t
 
 [Survey link](https://docs.google.com/forms/d/e/1FAIpQLSdpELD3fK4HUdkwh2NGcGHrtefLNEhr7sWw61sf08L07Oy16g/viewform?usp=sf_link)
   
-  ```mermaid
+  <img width="712" src="https://user-images.githubusercontent.com/111952804/233325828-13bc1a2a-c984-46f2-bd9f-a1bc41f13537.png">
+   
+   - En bred aldersgruppe fra 17- til 47-årige.
   
+  - Mange har mere end 1 streamingtjeneste.
+  
+  <img width="712" src="https://user-images.githubusercontent.com/111952804/233326636-06ebc903-033c-4a9c-bd62-7b96aeac4aa0.png">
+    
+  - Flertallet benytter streamingtjenester flere gange dagligt.
+
+  
+  ```mermaid
   pie title Hvordan finder du ud af, hvor du kan streame en bestemt film eller serie?
     "Googler det" : 22
     "Kigger på min streamingtjeneste" : 4
     "Playpilot" : 4
   ```
+  - Langt de fleste af brugerne søger på nettet, googling.
 
   ```mermaid
   pie title Hvad gør du, hvis du ikke kan finde den ønskede film eller serie?
@@ -32,7 +43,17 @@ Vi har lavet survey, for at få kvantitative data. Vi har udsendt vores survey t
   
   ```
   
+  - Halvdelen af brugerne oplever ikke udfordringer med søgning, men den anden halvdel mener at det kan være svært med forskellige titler på forskellige sprog, det tager længere tid at finde film/serie og at der kan kræves betaling.
   
+  - Flertallet af brugerne, ærgrer sig, bliver skuffet eller irriteret, hvis de ikke kan finde den ønsket film/serie, mens for de resterende, er det ikke et stort problem.
+  
+  <img width="600" src="https://user-images.githubusercontent.com/111952804/233329136-5f4c9a50-f050-445d-b0c3-937ff6ee4fcb.png">
+- Brugerne gør forskellige ting, når de ikke kan finde ønsket film/serie, som at finde en anden, leje, finde den bestemte online eller opgiver helt.
+  
+ -Brugerne mener at forbedring kunne være:
+1. overblik over hvor film/serie er tilgængelig.
+2. god søgeplatform.
+3. Alt indhold samlet ét sted.  
 </details>
 
 
@@ -62,7 +83,10 @@ Brugeren ender med at finde en anden gratis tilgængelig film på streamingtjene
 
 <details open>
   <summary> <b>Konklusion</b> </summary>
-
+Et flertal af vores brugere benytter streamingtjenester flere gange dagligt.
+Mange får negative følelser, når de ikke kan finde ud hvor en bestemt film/serie kan streames. 
+Brugerne gør flere forskellige ting, hvis de ikke kan finde en film eller serie, som at finde en anden film/serie, lejer, finder den bestemte online eller opgiver helt.
+Brugerne har behov for overblik over hvor film/serie er tilgængelig, god søgeplatform og alt indhold samlet ét sted.
 </details>
 
 ## User personas
@@ -115,16 +139,18 @@ Motivation (så jeg kan): spare tid på at lede efter en ønsket film/serie og i
 ## UX storyboard
 <img width="712" alt="Skærmbillede 2023-04-17 kl  10 44 21" src="https://user-images.githubusercontent.com/111922379/232432813-f5792541-ff5c-4f0d-ad23-24856132f178.png">
 
-## Wireframe and Solution sketch
-<img width="909" alt="Skærmbillede 2023-04-17 kl  10 45 18" src="https://user-images.githubusercontent.com/111922379/232433069-25d377c5-7e1f-4450-abf2-475b207e0011.png">
-
+## Beskrivelse af løsningen og processen
+Vi startede med at lave et moodboard som indeholder elementer som relaterer til vores emne. Så lavede vi et solution skecth med hvilken indhold og bruger interaktivitet, vi ville have med i vores app, og byggede videre op i wireframe, som viser mere præcis placering af elementer og funktioner. Så arbejdede vi med styletile og mockup, som leder til vores endelige appløsning.
+Vi ville gerne hjælpe vores brugere med at finde ud hvor en film kan streames, derfor har vi taget udgangspunkt i vores brugeres behov, som god søgeplatform og overblik over tilgængelighed.
 
 ## Mood board
 ![1](https://user-images.githubusercontent.com/111922379/232430220-33859a11-115b-4d4e-9241-d07b29ed4fc1.png)
+
+## Wireframe and Solution sketch
+<img width="909" alt="Skærmbillede 2023-04-17 kl  10 45 18" src="https://user-images.githubusercontent.com/111922379/232433069-25d377c5-7e1f-4450-abf2-475b207e0011.png">
 
 ## Style tile
 ![2](https://user-images.githubusercontent.com/111922379/232430186-691ded6d-be10-4074-af62-6a0a89cb7135.png)
 
 ## Mockup
 <img width="909" alt="Mockup of app" src="https://user-images.githubusercontent.com/111952804/233292481-e9bcf9b4-eba5-4668-b50b-c968477e7976.png">
-
