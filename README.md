@@ -22,8 +22,14 @@ Vi har lavet survey, for at få kvantitative data. Vi har udsendt vores survey t
   
   - Mange har mere end 1 streamingtjeneste.
   
-  <img width="712" src="https://user-images.githubusercontent.com/111952804/233326636-06ebc903-033c-4a9c-bd62-7b96aeac4aa0.png">
-    
+ ```mermaid
+  pie title Hvor ofte ser du film/serier på streamingtjenester?
+    "Flere gange dagligt" : 10
+    "En gang dagligt" : 5
+    "En gang om ugen" : 3
+    "Flere gange om ugen" : 9
+    "Sjældent" : 4
+  ```
   - Flertallet benytter streamingtjenester flere gange dagligt.
 
   
