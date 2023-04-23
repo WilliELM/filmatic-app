@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -33,7 +34,7 @@ public class ExploreActivity extends AppCompatActivity {
 
     private SearchView searchView;
     private ArrayList<MovieFetcher> itemList;
-    private ArrayList<String> movieTitleList;
+    private ListView listView;
     ActivityExploreBinding binding;
 
     //Maheen
@@ -49,42 +50,60 @@ public class ExploreActivity extends AppCompatActivity {
         startActivity(newIntentSearch);
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explore);
-
-
-
-
-
         fetchMovie();
-
         System.out.println(itemList);
         //William
-
+        //initialize search view
+        //virker ikke lige nu :(
+        //initSearchView();
         itemList = new ArrayList<>();
-        movieTitleList = new ArrayList<>();
+
+
 
     }
-
-    // setFilteredList skal kaldes med liste over film (moviefetchers)
-    //William
-    public void setFilteredList (ArrayList<String> filteredList){
-        this.movieTitleList = filteredList;
+    private void initSearchView (){
+        //SearchView searchView = findViewById(R.id.SearchBarrr);
+        searchView.clearFocus();
+        //Funktionalitet til searchView
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                ArrayList<MovieFetcher> filteredMovies = new ArrayList<MovieFetcher>();
+                for (MovieFetcher movieFetcher : itemList){
+                    if (movieFetcher.getTitle().toLowerCase().contains(newText.toLowerCase())){
+                        filteredMovies.add(movieFetcher);
+                        System.out.println(filteredMovies);
+                    }
+                }
+                MovieAdapter movieAdapter = new MovieAdapter(getApplicationContext(),0,R.id.titleOfMovie,filteredMovies);
+                ListView listView1 = findViewById(R.id.movieListExplore);
+                listView1.setAdapter(movieAdapter);
+                return true;
+            }
+        });
     }
 
+
+    //Nicklas
     private void fetchMovie() {
         String url = "https://streaming-availability.p.rapidapi.com/v2/search/title?title=batman&country=dk&show_type=all&output_language=en";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
                     // Handle the API response here
-                    System.out.println(response.length());
                     //William
                     try {
                         for (int i = 0; i < response.getJSONArray("result").length()-1; i++) {
                             String titleOfMovie = response.getJSONArray("result").getJSONObject(i).getString("title");
-                            System.out.println(titleOfMovie);
                             String description = response.getJSONArray("result").getJSONObject(i).getString("overview");
                             JSONArray cast = response.getJSONArray("result").getJSONObject(i).getJSONArray("cast");
                             int rating = response.getJSONArray("result").getJSONObject(i).getInt("imdbRating");
@@ -92,13 +111,10 @@ public class ExploreActivity extends AppCompatActivity {
                             //int runtime = response.getJSONArray("result").getJSONObject(i).getInt("runtime");
                             JSONArray servicesToStream = null;
                             String posterPath = "https://image.tmdb.org/t/p/w300" + response.getJSONArray("result").getJSONObject(i).getString("posterPath");
-
                             MovieFetcher n = new MovieFetcher(rating,runtime,titleOfMovie,description,cast,posterPath,servicesToStream);
                             itemList.add(n);
-                            movieTitleList.add(n.getTitle());
-                            setFilteredList(movieTitleList);
                             //ArrayAdapter<String> myAdapter = new ArrayAdapter<>(ExploreActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
-                           // myListView.setAdapter(myAdapter);
+                            // myListView.setAdapter(myAdapter);
 
 
 
@@ -110,11 +126,6 @@ public class ExploreActivity extends AppCompatActivity {
                     binding = ActivityExploreBinding.inflate(getLayoutInflater());
                     setContentView(binding.getRoot());
                     MovieAdapter movieAdapter = new MovieAdapter(ExploreActivity.this,R.layout.list_item,R.id.titleOfMovie,itemList);
-
-
-
-
-
                     binding.movieListExplore.setAdapter(movieAdapter);
                     binding.movieListExplore.setClickable(true);
                     binding.movieListExplore.setOnItemClickListener(new AdapterView.OnItemClickListener() {

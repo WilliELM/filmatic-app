@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <ImageView
+    <ViewFlipper
         android:id="@+id/imageView"
         android:layout_width="322dp"
         android:layout_height="204dp"
@@ -16,7 +17,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars"
-        android:background="@drawable/search_view_bg"/>
+        android:background="@drawable/search_view_bg"
+        android:autoStart="true"
+        android:flipInterval="4000"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right" >
+
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/movie"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:background="@drawable/search_view_bg"/>
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/movie1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:background="@drawable/search_view_bg"/>
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/movie2"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:background="@drawable/search_view_bg"/>
+    </ViewFlipper>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/SearchBar1"

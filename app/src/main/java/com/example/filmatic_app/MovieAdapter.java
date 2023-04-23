@@ -23,6 +23,8 @@ import java.net.URL;
 import java.util.ArrayList;
 //William
 public class MovieAdapter extends ArrayAdapter<MovieFetcher> {
+    private ArrayList<MovieFetcher> itemList;
+
     public static Bitmap getBitmapFromURL(String src) {
         try {
             Log.e("src", src);

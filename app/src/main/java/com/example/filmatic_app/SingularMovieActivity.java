@@ -8,10 +8,10 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.filmatic_app.databinding.ActivitySingularMovieBinding;
-
+//William
 public class SingularMovieActivity extends AppCompatActivity {
     ActivitySingularMovieBinding binding;
-
+    //William
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,7 @@ public class SingularMovieActivity extends AppCompatActivity {
 
 
         }
+
 
 
     }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">filmatic-app</string>
+    <color name="bluedarkest">#0B2545</color>
+    <color name="bluelighter">#13315C</color>
+    <color name="bluelightest">#8DA9C4</color>
+    <color name="greyish">#EEF4ED</color>
+    <color name="red">#9B2226</color>
 </resources>
