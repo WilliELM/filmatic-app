@@ -26,7 +26,7 @@ jobs:
           args: build
       - name: Push branch
         run: |
-          git push origin master
+          git push origin HEAD:master
       - name: Push changes to default branch
         uses: ad-m/github-push-action@master
         with:

@@ -6,6 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ExploreActivity">
+
+ <!-- <androidx.appcompat.widget.SearchView
+      android:id="@+id/SearchBarrr"
+      android:layout_width="322dp"
+      android:layout_height="52dp"
+      android:layout_marginTop="72dp"
+      android:background="@drawable/search_view_bg"
+      app:iconifiedByDefault="false"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.494"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:queryHint="Search here..." />-->
+
   <ImageButton
       android:id="@+id/imageButtonHome"
       android:onClick="navigateToHome"
@@ -25,6 +39,7 @@
 
   <ImageButton
       android:id="@+id/imageButtonSearch"
+      android:onClick="navigateToSearch"
       android:layout_width="67dp"
       android:layout_height="58dp"
       android:layout_marginTop="32dp"
@@ -56,15 +71,18 @@
       app:srcCompat="@drawable/explore" />
 
   <ListView
-      android:id="@+id/listeTilFilm"
-      android:layout_width="415dp"
-      android:layout_height="601dp"
+      android:id="@+id/movieListExplore"
+      android:layout_width="427dp"
+      android:layout_height="505dp"
       android:layout_marginTop="67dp"
       android:layout_marginBottom="88dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+      app:layout_constraintTop_toBottomOf="@+id/imageView4"
+      app:layout_constraintVertical_bias="0.0"
+      tools:listitem="@layout/list_item" />
 
   <ImageView
       android:id="@+id/imageView4"
