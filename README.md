@@ -92,8 +92,11 @@ Et flertal af brugerne udtrykker behov for et overblik over, hvor film/serie er 
 ## User personas
 
 **Billede 1**
+![Mette](https://user-images.githubusercontent.com/111922379/233850129-86462b85-9af5-4d85-98da-116a881733d5.png)
+
 
 **Billede 2**
+![Jacob](https://user-images.githubusercontent.com/111922379/233850132-31ed6d7f-8216-4c9b-9fb7-316d07f2cb51.png)
 
 
 ## User journey map
