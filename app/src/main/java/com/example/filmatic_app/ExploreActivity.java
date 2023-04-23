@@ -17,10 +17,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.filmatic_app.databinding.ActivityExploreBinding;
 import com.example.filmatic_app.databinding.ActivityMainBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +34,7 @@ public class ExploreActivity extends AppCompatActivity {
     private SearchView searchView;
     private ArrayList<MovieFetcher> itemList;
     private ArrayList<String> movieTitleList;
-    ActivityMainBinding binding;
+    ActivityExploreBinding binding;
 
     //Maheen
     public void navigateToHome(View view) {
@@ -90,23 +92,13 @@ public class ExploreActivity extends AppCompatActivity {
                             //int runtime = response.getJSONArray("result").getJSONObject(i).getInt("runtime");
                             JSONArray servicesToStream = null;
                             String posterPath = "https://image.tmdb.org/t/p/w300" + response.getJSONArray("result").getJSONObject(i).getString("posterPath");
-                            ArrayList<String> movieList = new ArrayList<>();
 
                             MovieFetcher n = new MovieFetcher(rating,runtime,titleOfMovie,description,cast,posterPath,servicesToStream);
                             itemList.add(n);
                             movieTitleList.add(n.getTitle());
                             setFilteredList(movieTitleList);
-                           // ListView myListView = findViewById(R.id.listeTilFilm);
                             //ArrayAdapter<String> myAdapter = new ArrayAdapter<>(ExploreActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
                            // myListView.setAdapter(myAdapter);
-
-                            // myListView.setVisibility(View.GONE);
-
-
-
-
-
-
 
 
 
@@ -114,25 +106,28 @@ public class ExploreActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
-                    binding = ActivityMainBinding.inflate(getLayoutInflater());
+                    //William
+                    binding = ActivityExploreBinding.inflate(getLayoutInflater());
                     setContentView(binding.getRoot());
                     MovieAdapter movieAdapter = new MovieAdapter(ExploreActivity.this,R.layout.list_item,R.id.titleOfMovie,itemList);
 
-                    //public MovieAdapter (Context context, ArrayList<MovieFetcher> movieFetcherArrayList){
-                    //    super(context,R.layout.list_item,movieFetcherArrayList);
-                  //  }
 
 
 
-                    binding.listeTilFilm.setAdapter(movieAdapter);
-                    binding.listeTilFilm.setClickable(true);
-                  // binding.listeTilFilm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                       // @Override
-                        //public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            // intent til ny activity skal indsættes her!!!!
-                            //  intent.putExtra("title", osv)
-                       // }
-                  //  });
+
+                    binding.movieListExplore.setAdapter(movieAdapter);
+                    binding.movieListExplore.setClickable(true);
+                    binding.movieListExplore.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                       @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                             //intent til ny activity skal indsættes her!!!!
+                             Intent intent = new Intent(ExploreActivity.this,SingularMovieActivity.class);
+                             intent.putExtra("movie",itemList.get(position).getTitle());
+                             intent.putExtra("description",itemList.get(position).getDescription());
+                             intent.putExtra("picture",itemList.get(position).getPicture());
+                             startActivity(intent);
+                        }
+                    });
 
                 },
                 error -> {

@@ -25,6 +25,7 @@
 
   <ImageButton
       android:id="@+id/imageButtonSearch"
+      android:onClick="navigateToSearch"
       android:layout_width="67dp"
       android:layout_height="58dp"
       android:layout_marginTop="32dp"
@@ -56,7 +57,7 @@
       app:srcCompat="@drawable/explore" />
 
   <ListView
-      android:id="@+id/listeTilFilm"
+      android:id="@+id/movieListExplore"
       android:layout_width="427dp"
       android:layout_height="505dp"
       android:layout_marginTop="67dp"

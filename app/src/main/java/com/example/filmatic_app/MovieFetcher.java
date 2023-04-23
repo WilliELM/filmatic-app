@@ -42,6 +42,11 @@ public class MovieFetcher {
         this.runtime = runtime;
     }
 
+    @Override
+    public String toString() {
+        return  title;
+    }
+
     public String getTitle() {
         return title;
     }
