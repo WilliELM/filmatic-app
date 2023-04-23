@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fetchMovie();
+       // fetchMovie();
 
 
 
@@ -117,9 +117,7 @@ public class MainActivity extends AppCompatActivity {
                             movieTitleList.add(n.getTitle());
                             System.out.println(itemList.toString());
                             setFilteredList(movieTitleList);
-                            ListView myListView = findViewById(R.id.listeTilFilm);
                             ArrayAdapter<String> myAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, movieTitleList);
-                            myListView.setAdapter(myAdapter);
 
                             // myListView.setVisibility(View.GONE);
 
