@@ -24,12 +24,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           args: build
-      - name: Push branch
-        run: |
-          git push origin HEAD:master
+          
       - name: Push changes to default branch
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-          force: true
