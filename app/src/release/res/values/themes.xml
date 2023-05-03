@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.Filmaticapp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Filmaticapp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Filmaticapp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
