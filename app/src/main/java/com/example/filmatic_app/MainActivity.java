@@ -2,30 +2,14 @@ package com.example.filmatic_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Intent newIntentSearch = new Intent(this, ListActivity.class);
         startActivity(newIntentSearch);
     }
-    //Maheen
+    //Maheen test branch
     public void navigateToExplore(View view) {
         ImageButton newNavigation = findViewById(R.id.imageButtonExplore);
         Intent newIntentExplore = new Intent(this, ExploreActivity.class);
